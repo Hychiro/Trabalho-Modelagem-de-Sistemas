@@ -13,25 +13,33 @@ import java.util.Set;
  */
 public class Professor extends Funcionario {
     
-    private Set<String> disciplinas;
+    private Set<Disciplina> disciplinas;
     private String horarioDeAtendimento;
     private int numeroCopiasGratuitas;
     
-    public Professor(String nome, String senha, String sexo, String data, String matriculaFuncionario, String unidade, String departamento) {
+    public Professor(String nome, String senha, char sexo, String data, int matriculaFuncionario, String unidade, String departamento,Set<Disciplina> disciplinas, String horarioDeAtendimento) {
         super(nome, senha, sexo, data, matriculaFuncionario, unidade, departamento);
+        this.disciplinas = disciplinas;
+        this.horarioDeAtendimento = horarioDeAtendimento;
+        
     }
 
+    
+    public void adicionaDisciplina (Disciplina disciplina){
+        getDisciplinas().add(disciplina);
+    }
+    
     /**
      * @return the disciplinas
      */
-    public Set<String> getDisciplinas() {
+    public Set<Disciplina> getDisciplinas() {
         return disciplinas;
     }
 
     /**
      * @param disciplinas the disciplinas to set
      */
-    public void setDisciplinas(Set<String> disciplinas) {
+    public void setDisciplinas(Set<Disciplina> disciplinas) {
         this.disciplinas = disciplinas;
     }
 
