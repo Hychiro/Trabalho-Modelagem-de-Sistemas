@@ -43,7 +43,7 @@ public class Usuario {
             valor = 0;
             //atualiza num de copias gratuitas pra quantidade
         }else{
-            valor = (float) (quantidade * 0.25);
+            valor = (float) (-quantidade * 0.25);
             //atualiza num de copias gratuitas pra 0;
         }
         return valor;
