@@ -17,23 +17,16 @@ import java.time.temporal.ChronoUnit;
 public class Usuario {
     private String nome;
     private String senha;
-    private String sexo;
+    private char sexo;
     private String data;
-    private int idade;
     
-    Usuario(String nome, String senha, String sexo, String data){
+    Usuario(String nome, String senha, char sexo, String data){
         this.nome = nome;
         this.senha = senha;
         this.sexo = sexo;
         this.data = data;
-        this.idade = calculoIdade();
     }
     
-    public int calculoIdade(){
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        LocalDate dataFormatada = LocalDate.parse(this.data, dateTimeFormatter);
-        return (int) ChronoUnit.YEARS.between( LocalDate.now() , dataFormatada);
-    }
     
     
     public float calculoPagamento(int copiasGratuitas, int numCopias){
@@ -80,14 +73,14 @@ public class Usuario {
     /**
      * @return the sexo
      */
-    public String getSexo() {
+    public char getSexo() {
         return sexo;
     }
 
     /**
      * @param sexo the sexo to set
      */
-    public void setSexo(String sexo) {
+    public void setSexo(char sexo) {
         this.sexo = sexo;
     }
 
@@ -104,22 +97,6 @@ public class Usuario {
     public void setData(String data) {
         this.data = data;
     }
-
-    /**
-     * @return the idade
-     */
-    public int getIdade() {
-        return idade;
-    }
-
-    /**
-     * @param idade the idade to set
-     */
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
-    
-    
-    
+   
     
 }
