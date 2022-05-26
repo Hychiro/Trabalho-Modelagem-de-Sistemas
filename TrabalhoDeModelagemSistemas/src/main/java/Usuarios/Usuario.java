@@ -26,22 +26,16 @@ public class Usuario {
         this.senha = senha;
         this.sexo = sexo;
         this.data = data;
-        this.idade = calculoIdade(this.data);
+        this.idade = calculoIdade();
     }
     
-    public int getTempo(){
+    public int calculoIdade(){
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        LocalDate data = LocalDate.parse(data, dateTimeFormatter);
-        return (int) ChronoUnit.DAYS.between( LocalDate.now(); , this.dataVencimento);
+        LocalDate dataFormatada = LocalDate.parse(this.data, dateTimeFormatter);
+        return (int) ChronoUnit.YEARS.between( LocalDate.now() , dataFormatada);
     }
     
-    protected void DataDeNascimento(){
-        Scanner teclado = new Scanner(System.in);
-        String novaData = teclado.nextLine();
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        this.data = LocalDate.parse(novaData, dateTimeFormatter);
-              
-    }
+    
     public float calculoPagamento(int copiasGratuitas, int numCopias){
         float valor ;
         int quantidade = copiasGratuitas - numCopias;
@@ -53,10 +47,6 @@ public class Usuario {
             //atualiza num de copias gratuitas pra 0;
         }
         return valor;
-    }
-    public int calculoIdade(int data[]){
-        
-        return 0;
     }
 
     /**
@@ -104,14 +94,14 @@ public class Usuario {
     /**
      * @return the data
      */
-    public int[] getData() {
+    public String getData() {
         return data;
     }
 
     /**
      * @param data the data to set
      */
-    public void setData(int[] data) {
+    public void setData(String data) {
         this.data = data;
     }
 
