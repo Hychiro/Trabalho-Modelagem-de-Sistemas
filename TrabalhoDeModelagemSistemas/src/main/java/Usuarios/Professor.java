@@ -5,70 +5,64 @@
  */
 package Usuarios;
 
-import java.util.Set;
-
 /**
  *
  * @author Usuario
  */
-public class Professor extends Funcionario {
-    
-    private Set<Disciplina> disciplinas;
-    private String horarioDeAtendimento;
-    private int numeroCopiasGratuitas;
-    
-    public Professor(String nome, String senha, char sexo, String data, int matriculaFuncionario, String unidade, String departamento,Set<Disciplina> disciplinas, String horarioDeAtendimento) {
-        super(nome, senha, sexo, data, matriculaFuncionario, unidade, departamento);
-        this.disciplinas = disciplinas;
-        this.horarioDeAtendimento = horarioDeAtendimento;
+public class Aluno extends Usuario {
+
+    private int matriculadoAluno;
+    private String curso;
+    private int copiasRestantes = 0;
+
+    public Aluno(String nome, String senha, char sexo, String data, int matriculadoAluno, String curso, int copiasRestantes) {
+        super(nome, senha, sexo, data);
+        this.curso = curso;
+        this.copiasRestantes = copiasRestantes;
+        this.matriculadoAluno =  matriculadoAluno;
         
     }
 
-    
-    public void adicionaDisciplina (Disciplina disciplina){
-        getDisciplinas().add(disciplina);
-    }
-    
     /**
-     * @return the disciplinas
+     * @return the matriculadoAluno
      */
-    public Set<Disciplina> getDisciplinas() {
-        return disciplinas;
+    public int getMatriculadoAluno() {
+        return matriculadoAluno;
     }
 
     /**
-     * @param disciplinas the disciplinas to set
+     * @param matriculadoAluno the matriculadoAluno to set
      */
-    public void setDisciplinas(Set<Disciplina> disciplinas) {
-        this.disciplinas = disciplinas;
+    public void setMatriculadoAluno(int matriculadoAluno) {
+        this.matriculadoAluno = matriculadoAluno;
     }
 
     /**
-     * @return the horarioDeAtendimento
+     * @return the curso
      */
-    public String getHorarioDeAtendimento() {
-        return horarioDeAtendimento;
+    public String getCurso() {
+        return curso;
     }
 
     /**
-     * @param horarioDeAtendimento the horarioDeAtendimento to set
+     * @param curso the curso to set
      */
-    public void setHorarioDeAtendimento(String horarioDeAtendimento) {
-        this.horarioDeAtendimento = horarioDeAtendimento;
+    public void setCurso(String curso) {
+        this.curso = curso;
     }
 
     /**
-     * @return the numeroCopiasGratuitas
+     * @return the copiasRestantes
      */
-    public int getNumeroCopiasGratuitas() {
-        return numeroCopiasGratuitas;
+    public int getCopiasRestantes() {
+        return copiasRestantes;
     }
 
     /**
-     * @param numeroCopiasGratuitas the numeroCopiasGratuitas to set
+     * @param copiasRestantes the copiasRestantes to set
      */
-    public void setNumeroCopiasGratuitas(int numeroCopiasGratuitas) {
-        this.numeroCopiasGratuitas = numeroCopiasGratuitas;
+    public void setCopiasRestantes(int copiasRestantes) {
+        this.copiasRestantes = copiasRestantes;
     }
-    
+
 }
