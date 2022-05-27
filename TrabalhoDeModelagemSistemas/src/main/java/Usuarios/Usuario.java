@@ -20,11 +20,14 @@ public class Usuario {
     private char sexo;
     private String data;
 
+
     Usuario(String nome, String senha, char sexo, String data) {
+
         this.nome = nome;
         this.senha = senha;
         this.sexo = sexo;
         this.data = data;
+
     }
 
     /**

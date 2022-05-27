@@ -13,11 +13,13 @@ public class Aluno extends Usuario {
 
     private int matriculadoAluno;
     private String curso;
+
     private int copiasRestantes = 50;
 
     public Aluno(String nome, String senha, char sexo, String data, int matriculadoAluno, String curso) {
         super(nome, senha, sexo, data);
         this.curso = curso;
+
         this.matriculadoAluno =  matriculadoAluno;
         
     }
