@@ -12,7 +12,7 @@ package Usuarios;
 public class Secretario extends Funcionario {
     private String horarioDeTrabalho;
 
-    public Secretario(String nome, String senha, String sexo, String data, String matriculaFuncionario, String unidade, String departamento, String horarioDeTrabalho) {
+    public Secretario(String nome, String senha, char sexo, String data, int matriculaFuncionario, String unidade, String departamento, String horarioDeTrabalho) {
         super(nome, senha, sexo, data, matriculaFuncionario, unidade, departamento);
         this.horarioDeTrabalho = horarioDeTrabalho;
     }

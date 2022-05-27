@@ -10,22 +10,29 @@ package Usuarios;
  * @author Usuario
  */
 public class Aluno extends Usuario {
-    
-    public Aluno(String nome, String senha, String sexo, String data) {
+
+    private int matriculadoAluno;
+    private String curso;
+    private int copiasRestantes = 50;
+
+    public Aluno(String nome, String senha, char sexo, String data, int matriculadoAluno, String curso) {
         super(nome, senha, sexo, data);
+        this.curso = curso;
+        this.matriculadoAluno =  matriculadoAluno;
+        
     }
 
     /**
      * @return the matriculadoAluno
      */
-    public String getMatriculadoAluno() {
+    public int getMatriculadoAluno() {
         return matriculadoAluno;
     }
 
     /**
      * @param matriculadoAluno the matriculadoAluno to set
      */
-    public void setMatriculadoAluno(String matriculadoAluno) {
+    public void setMatriculadoAluno(int matriculadoAluno) {
         this.matriculadoAluno = matriculadoAluno;
     }
 
@@ -56,8 +63,5 @@ public class Aluno extends Usuario {
     public void setCopiasRestantes(int copiasRestantes) {
         this.copiasRestantes = copiasRestantes;
     }
-    
-    private String matriculadoAluno;
-    private String curso;
-    private int copiasRestantes=0;
+
 }

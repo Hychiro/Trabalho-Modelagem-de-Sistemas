@@ -11,11 +11,11 @@ package Usuarios;
  */
 public class Funcionario extends Usuario {
 
-    private String matriculaFuncionario;
+    private int matriculaFuncionario;
     private String unidade;
     private String departamento;
 
-    public Funcionario(String nome, String senha, String sexo, String data, String matriculaFuncionario, String unidade, String departamento) {
+    public Funcionario(String nome, String senha, char sexo, String data, int matriculaFuncionario, String unidade, String departamento) {
         super(nome, senha, sexo, data);
         this.matriculaFuncionario = matriculaFuncionario;
         this.unidade =  unidade;
@@ -25,14 +25,14 @@ public class Funcionario extends Usuario {
     /**
      * @return the matriculaFuncionario
      */
-    public String getMatriculaFuncionario() {
+    public int getMatriculaFuncionario() {
         return matriculaFuncionario;
     }
 
     /**
      * @param matriculaFuncionario the matriculaFuncionario to set
      */
-    public void setMatriculaFuncionario(String matriculaFuncionario) {
+    public void setMatriculaFuncionario(int matriculaFuncionario) {
         this.matriculaFuncionario = matriculaFuncionario;
     }
 

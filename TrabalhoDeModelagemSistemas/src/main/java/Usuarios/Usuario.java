@@ -5,7 +5,6 @@
  */
 package Usuarios;
 
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
@@ -15,38 +14,17 @@ import java.time.temporal.ChronoUnit;
  * @author Usuario
  */
 public class Usuario {
+
     private String nome;
     private String senha;
-    private String sexo;
+    private char sexo;
     private String data;
-    private int idade;
-    
-    Usuario(String nome, String senha, String sexo, String data){
+
+    Usuario(String nome, String senha, char sexo, String data) {
         this.nome = nome;
         this.senha = senha;
         this.sexo = sexo;
         this.data = data;
-        this.idade = calculoIdade();
-    }
-    
-    public int calculoIdade(){
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        LocalDate dataFormatada = LocalDate.parse(this.data, dateTimeFormatter);
-        return (int) ChronoUnit.YEARS.between( LocalDate.now() , dataFormatada);
-    }
-    
-    
-    public float calculoPagamento(int copiasGratuitas, int numCopias){
-        float valor ;
-        int quantidade = copiasGratuitas - numCopias;
-        if (quantidade>=0){
-            valor = 0;
-            //atualiza num de copias gratuitas pra quantidade
-        }else{
-            valor = (float) (-quantidade * 0.25);
-            //atualiza num de copias gratuitas pra 0;
-        }
-        return valor;
     }
 
     /**
@@ -80,14 +58,14 @@ public class Usuario {
     /**
      * @return the sexo
      */
-    public String getSexo() {
+    public char getSexo() {
         return sexo;
     }
 
     /**
      * @param sexo the sexo to set
      */
-    public void setSexo(String sexo) {
+    public void setSexo(char sexo) {
         this.sexo = sexo;
     }
 
@@ -105,21 +83,4 @@ public class Usuario {
         this.data = data;
     }
 
-    /**
-     * @return the idade
-     */
-    public int getIdade() {
-        return idade;
-    }
-
-    /**
-     * @param idade the idade to set
-     */
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
-    
-    
-    
-    
 }
